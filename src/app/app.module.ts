@@ -15,6 +15,8 @@ import { HeroService } from './hero.service';
 import { MessageService } from './message.service';
 // สร้าง component ผ่านคำสั่ง ng generate component messages
 import { MessagesComponent } from './messages/messages.component';
+// สร้าง Route ผ่านคำสั่ง ng ng generate module app-routing --flat --module=app
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -29,7 +31,8 @@ import { MessagesComponent } from './messages/messages.component';
   // import library
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   // เรียกใช้ service HeroService, MessageService เป็นตัวกลางในการปรับเปลี่ยนข้อมูลของ
   providers: [HeroService, MessageService],

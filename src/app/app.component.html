@@ -1,6 +1,12 @@
 <!-- ใน {{}} คือตัวแปรหรือ โค้ดที่รับค่ามาจาก component -->
 <h1>{{ title }}</h1>
 <!-- เรียกใช้ component ที่ export มาจาก app/heroes/heroes.component.ts  [selector = 'app.heroes'] -->
-<app-heroes></app-heroes>
+<!-- <app-heroes></app-heroes> -->
+<!-- navigation bar เพื่อนสร้าง link ตาม route ที่มี -->
+<nav>
+    <a routerLink="/heroes">Heroes</a>
+</nav>
+<!-- จะเรียกใช้ componest ตาม route -->
+<router-outlet></router-outlet>
 <!-- เรียกใช้ component ที่ export มาจาก app/messages/messages.component.ts  [selector = 'app.messages'] -->
 <app-messages></app-messages>
