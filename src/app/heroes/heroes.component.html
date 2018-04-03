@@ -1,0 +1,31 @@
+<!-- | uppercase จะทำให้ value ของ obj hero.name แสดงผลเป็นตัวใหญ่ทั้งหมด -->
+<!-- <h2>{{ hero.name | uppercase }} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+<div>
+    <label>name: -->
+<!-- เรียกใช้ ngModel เพื่อเซ็คค่า obj hero.name เมื่อมีการ เปลี่ยนแปลงค่า ของ input -->
+<!-- <input [(ngModel)]="hero.name" placeholder="name">
+    </label>
+</div> -->
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <!-- ngFor จะทำการทำซ้ำคำสั่งใน host ในที่นี่คือ <li> และแปลง list จาก heroes เป็น single value hero -->
+  <!-- (click)="onSelect(hero)" ทำการแอด func onSelect() และส่งค่า obj hero เข้าไปใน func เมื่อมีการ click <li> -->
+  <!-- [class.selected] จะเพิ่มคลาส selected เมื่อ hero มีค่าเท่ากับ selectedHero และจะลบคลาสออกเมื่อ hero มีค่าไม่เท่ากับ selectedHero -->
+  <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul>
+<!-- ngIf คล้ายกับ if ทั่วไป โดยจะทำการตรวจสอบค่า selectedHero ถ้ามีค่าก็จะทำคำสั่งใน <div *ngIf=""> ถ้าไม่มีค่าก็จะไม่ทำอะไร -->
+<!-- <div *ngIf="selectedHero">
+  <h2>{{ selectedHero.name | uppercase }} Detail</h2>
+  <div>
+    <span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name">
+    </label>
+  </div>
+</div> -->
+<!-- ส่งค่า selectedHero ไปให้ component hero-detail.component ในตัวแปรชื่อ hero -->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
