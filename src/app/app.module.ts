@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // ngModel lives here
+import { HttpClientModule } from '@angular/common/http';
 
 // import component ที่จะใช้งาน
 import { AppComponent } from './app.component';
@@ -20,6 +21,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 // สร้าง Route ผ่านคำสั่ง ng ng generate module app-routing --flat --module=app
 import { AppRoutingModule } from './app-routing.module';
 
+// web api
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
 
 
 @NgModule({
@@ -35,7 +40,11 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   // เรียกใช้ service HeroService, MessageService เป็นตัวกลางในการปรับเปลี่ยนข้อมูลของ
   providers: [HeroService, MessageService],
