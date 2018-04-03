@@ -34,11 +34,11 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  // func ที่จะถูกเรียกใช้เมื่อ <li> มี action click โดยจะรับตัวแปร hero ที่มีการกำหมดโครงสร้างให้เท่ากับ obj Hero
-  onSelect(hero: Hero): void {
-    // กำหนดตัวแปร selectHero ให้เท่ากับ hero ที่ส่งมา
-    this.selectedHero = hero;
-  }
+  // // func ที่จะถูกเรียกใช้เมื่อ <li> มี action click โดยจะรับตัวแปร hero ที่มีการกำหมดโครงสร้างให้เท่ากับ obj Hero
+  // onSelect(hero: Hero): void {
+  //   // กำหนดตัวแปร selectHero ให้เท่ากับ hero ที่ส่งมา
+  //   this.selectedHero = hero;
+  // }
 
   // func getHeroes จะเซ็ตค่า heroes ให้เท่ากับข้อมูลที่อยู่ใน heroService.getHeroes
   getHeroes(): void {

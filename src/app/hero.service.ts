@@ -8,7 +8,7 @@ import { HEROES } from './mock-heroes';
 // rxjs อ่านเพิ่มเติมได้ในเรื่อง Reactive Programming
 // import Onservable ที่ใช้ในการติดตามข้อมูล
 import { Observable } from 'rxjs/Observable';
-// ใช้แทน คำสั่ง create ของ rxjs
+// ใช้ of แทน คำสั่ง create ของ rxjs
 import { of } from 'rxjs/observable/of';
 
 // import service message
@@ -30,4 +30,11 @@ export class HeroService {
     // of ใช้ในการสร้างและส่งข้อมูลของ observables ให้กับตัวแปรที่กด subscribe
     return of(HEROES);
   }
+
+  // ส่งข้อมูลของ Hero by id ที่รับมา
+  getHero(id: number): Observable<Hero> {
+    this.messageService.add(`HeroService: fetched hero id=${id}`);
+    return of(HEROES.find(hero => hero.id === id));
+  }
+
 }

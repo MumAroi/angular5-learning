@@ -12,8 +12,12 @@
   <!-- ngFor จะทำการทำซ้ำคำสั่งใน host ในที่นี่คือ <li> และแปลง list จาก heroes เป็น single value hero -->
   <!-- (click)="onSelect(hero)" ทำการแอด func onSelect() และส่งค่า obj hero เข้าไปใน func เมื่อมีการ click <li> -->
   <!-- [class.selected] จะเพิ่มคลาส selected เมื่อ hero มีค่าเท่ากับ selectedHero และจะลบคลาสออกเมื่อ hero มีค่าไม่เท่ากับ selectedHero -->
-  <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  <!-- <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)"> -->
+  <li *ngFor="let hero of heroes">
+    <!-- routerLink สร้าง url link จาก path web => localhost:4200/ -->
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
   </li>
 </ul>
 <!-- ngIf คล้ายกับ if ทั่วไป โดยจะทำการตรวจสอบค่า selectedHero ถ้ามีค่าก็จะทำคำสั่งใน <div *ngIf=""> ถ้าไม่มีค่าก็จะไม่ทำอะไร -->
