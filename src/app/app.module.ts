@@ -15,6 +15,8 @@ import { HeroService } from './hero.service';
 import { MessageService } from './message.service';
 // สร้าง component ผ่านคำสั่ง ng generate component messages
 import { MessagesComponent } from './messages/messages.component';
+// สร้าง component ผ่านคำสั่ง ng generate component dashboard
+import { DashboardComponent } from './dashboard/dashboard.component';
 // สร้าง Route ผ่านคำสั่ง ng ng generate module app-routing --flat --module=app
 import { AppRoutingModule } from './app-routing.module';
 
@@ -26,7 +28,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   // import library
   imports: [
