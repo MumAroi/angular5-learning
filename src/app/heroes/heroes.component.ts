@@ -26,7 +26,7 @@ export class HeroesComponent implements OnInit {
   // ประกาศตัวแปร ให้มีโครงสร้างเท่ากับ obj Hero
   selectedHero: Hero;
 
-// เรียกใช้ HeroService โดยแทนคำสั่งผ่านตัวแปร heroService
+  // เรียกใช้ HeroService โดยแทนคำสั่งผ่านตัวแปร heroService
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
@@ -45,7 +45,23 @@ export class HeroesComponent implements OnInit {
     // this.heroes = this.heroService.getHeroes();
     // subscribe ข้อมูลข้อง Hero โดยมีการส่ง func callback เข้าไปด้วย func heroes()
     this.heroService.getHeroes()
-    .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => this.heroes = heroes);
+  }
+
+  // func เพิ่ม hero เมื่อ กด click มาจากหน้า view
+  add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.heroService.addHero({ name } as Hero)
+      .subscribe(hero => {
+        this.heroes.push(hero);
+      });
+  }
+
+  // func ลบ hero ที่เลือก
+  delete(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero).subscribe();
   }
 
 }

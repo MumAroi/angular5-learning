@@ -18,6 +18,7 @@
     <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
+    <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
   </li>
 </ul>
 <!-- ngIf คล้ายกับ if ทั่วไป โดยจะทำการตรวจสอบค่า selectedHero ถ้ามีค่าก็จะทำคำสั่งใน <div *ngIf=""> ถ้าไม่มีค่าก็จะไม่ทำอะไร -->
@@ -33,3 +34,13 @@
 </div> -->
 <!-- ส่งค่า selectedHero ไปให้ component hero-detail.component ในตัวแปรชื่อ hero -->
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+<div>
+  <label>Hero name:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    add
+  </button>
+</div>
