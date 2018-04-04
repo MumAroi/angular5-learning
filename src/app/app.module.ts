@@ -18,6 +18,8 @@ import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
 // สร้าง component ผ่านคำสั่ง ng generate component dashboard
 import { DashboardComponent } from './dashboard/dashboard.component';
+// สร้าง component ผ่านคำสั่ง ng generate component hero-search
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 // สร้าง Route ผ่านคำสั่ง ng ng generate module app-routing --flat --module=app
 import { AppRoutingModule } from './app-routing.module';
 
@@ -34,7 +36,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSearchComponent
   ],
   // import library
   imports: [
