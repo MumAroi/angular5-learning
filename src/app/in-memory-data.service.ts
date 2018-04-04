@@ -1,6 +1,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 export class InMemoryDataService implements InMemoryDbService {
+  // สร้าว db จำลองใน memory
   createDb() {
     const heroes = [
       { id: 11, name: 'Mr. Nice' },

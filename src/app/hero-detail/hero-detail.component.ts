@@ -38,4 +38,10 @@ export class HeroDetailComponent implements OnInit {
     this.location.back();
   }
 
+  // เพิ่ม hero ใหม่เข้าไปใน mocker up data api
+  save(): void {
+    this.heroService.updateHero(this.hero)
+      .subscribe(() => this.goBack());
+  }
+
 }
